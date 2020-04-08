@@ -13,7 +13,7 @@ export class ProductsQuery extends QueryEntity<ProductsState> {
     getProducts(term: string, sortBy: keyof Product) {
         return this.selectAll({
             sortBy,
-            filterBy: entity => entity.title.toLowerCase().includes(term)
+            filterBy: entity => entity.name.toLowerCase().includes(term)
         });
     }
 }

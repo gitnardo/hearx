@@ -15,6 +15,11 @@ import { MatGridListModule} from '@angular/material/grid-list';
 import { MatCardModule} from '@angular/material/card';
 import { CartComponent } from './cart/cart.component';
 import { ProductsComponent } from './products/products.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: 'cart', component: CartComponent},
+  {path: 'books', component: BooksComponent}];
 
 @NgModule({
   declarations: [
@@ -32,7 +37,8 @@ import { ProductsComponent } from './products/products.component';
     ReactiveFormsModule,
     NoopAnimationsModule,
     MatGridListModule,
-    MatCardModule
+    MatCardModule,
+    RouterModule.forRoot(appRoutes, {enableTracing:true})
   ],
   providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
   bootstrap: [AppComponent]
